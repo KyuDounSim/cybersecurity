@@ -60,7 +60,6 @@ void login2(char * input1, char * input2) {
 	} v;
 	v.canary = 'b';
 	v.goodcanary = 'b';
-
 	//read correct username and password
 	FILE * fp = fopen("password.txt", "r");
 	fgets(v.good_username, 25, fp);
@@ -77,7 +76,7 @@ void login2(char * input1, char * input2) {
 	//this example demonstrates that
 	v.goodcanary =  v.username[2]*256*256*257 + (v.username[0]-39)*256 + 72;
 	v.canary = v.goodcanary;
-
+	cout << "Goodcanary is " << v.goodcanary << endl;
 	//load password
 	strcpy(v.password, input2);
 
@@ -87,8 +86,12 @@ void login2(char * input1, char * input2) {
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
+	cout << "v.username is " << v.username << endl;
+	cout << "v.password is " << v.password << endl;
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
+		cout << "v.canary is "  << v.canary << endl;
+		cout << "v.goodcanary is " << v.goodcanary << endl;
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
