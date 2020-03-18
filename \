@@ -37,14 +37,21 @@ void login1(char * input1, char * input2) {
 
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
+		cout << v.username << endl;
+		cout << v.password << endl;
+		printf("v.canary is %c \n", v.canary);
+		printf("v.goodcanary is %c\n", v.goodcanary);
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
-
 	if (strcmp(v.username, v.good_username) == 0 && strcmp(v.password, v.good_password) == 0) {
+		cout << v.good_username << endl;
+		cout << v.good_password << endl;
 		printf("Login successful!\n");
 	}
 	else {
+		cout << v.good_username << endl;
+		cout << v.good_password << endl;
 		printf("Login denied.\n");
 	}
 }
