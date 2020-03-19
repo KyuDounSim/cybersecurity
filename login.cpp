@@ -59,6 +59,7 @@ void login2(char * input1, char * input2) {
 		char username[25];
 	} v;
 	cout << "initial good canary is " << v.goodcanary << endl;
+	cout << "initial canary is " << v.canary << endl;
 	cout << "canary is " << v.canary << endl;
 	v.canary = 'b';
 	v.goodcanary = 'b';
