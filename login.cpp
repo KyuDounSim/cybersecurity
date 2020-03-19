@@ -58,6 +58,8 @@ void login2(char * input1, char * input2) {
 		char good_password[25];
 		char username[25];
 	} v;
+	cout << "initial good canary is " << v.goodcanary << endl;
+	cout << "canary is " << v.canary << endl;
 	v.canary = 'b';
 	v.goodcanary = 'b';
 	//read correct username and password
@@ -75,8 +77,8 @@ void login2(char * input1, char * input2) {
 	//for real code, it is sometimes possible to read or predict the true value of canaries due to another leak
 	//this example demonstrates that
 	v.goodcanary =  v.username[2]*256*256*257 + (v.username[0]-39)*256 + 72;
+	//cout << *(&v.goodcanary + 5 ) << endl;
 	v.canary = v.goodcanary;
-	cout << "Goodcanary is " << v.goodcanary << endl;
 	//load password
 	strcpy(v.password, input2);
 
@@ -88,6 +90,8 @@ void login2(char * input1, char * input2) {
 
 	cout << "v.username is " << v.username << endl;
 	cout << "v.password is " << v.password << endl;
+	cout << "v.goodusername is " << v.good_username << endl;
+	cout << "v.goodpassword is " << v.good_password << endl;
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
 		cout << "v.canary is "  << v.canary << endl;
@@ -95,6 +99,7 @@ void login2(char * input1, char * input2) {
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
+	
 	if (strcmp(v.username, v.good_username) == 0 && strcmp(v.password, v.good_password) == 0) printf("Login successful!\n");
 	else printf("Login denied.\n");
 
