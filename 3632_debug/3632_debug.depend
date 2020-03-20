@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1584696511 source:c:\users\simky\repositories\comp3632_a1\3632_debug\main.cpp
+	<cstdio>
+	<cstring>
+	<cstdlib>
+	<unistd.h>
+	<stdint.h>
+	<time.h>
+	<iostream>
+
