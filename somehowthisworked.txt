@@ -12,3 +12,7 @@ part c: part c don't overwrite the canary, but skip over it
 
 
 -j kdsim THISVPASSWORDTHISVPASSWO1111HDssTHISVGOODUSERNAMETHISVGO9THISVGOODPASSWORDVGOODPA2kdsim
+
+ ./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXYabcdfghijklmnopqrstuvwxyzABCDE2ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::
+
+./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXY:::::::::::::::::::::::::::::::ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::

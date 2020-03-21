@@ -58,9 +58,6 @@ void login2(char * input1, char * input2) {
 		char good_password[25];
 		char username[25];
 	} v;
-	cout << "initial good canary is " << v.goodcanary << endl;
-	cout << "initial canary is " << v.canary << endl;
-	cout << "canary is " << v.canary << endl;
 	v.canary = 'b';
 	v.goodcanary = 'b';
 	//read correct username and password
@@ -89,14 +86,14 @@ void login2(char * input1, char * input2) {
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
-	cout << "v.username is " << v.username << endl;
-	cout << "v.password is " << v.password << endl;
-	cout << "v.goodusername is " << v.good_username << endl;
-	cout << "v.goodpassword is " << v.good_password << endl;
+	//cout << "v.username is " << v.username << endl;
+	//cout << "v.password is " << v.password << endl;
+	//cout << "v.goodusername is " << v.good_username << endl;
+	//cout << "v.goodpassword is " << v.good_password << endl;
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
-		cout << "v.canary is "  << v.canary << endl;
-		cout << "v.goodcanary is " << v.goodcanary << endl;
+		//cout << "v.canary is "  << v.canary << endl;
+		//cout << "v.goodcanary is " << v.goodcanary << endl;
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
@@ -134,6 +131,7 @@ void login3(char * input1, char * input2) {
 
 	while (written_char < 25) { //don't write too much
 		int c = (int)input2[ind];
+		//cout << "c: " << c << endl;
 		if (c == 0 || (c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122) ) {
 			//this is an okay character. load it
 			v.password[ind] = (char)c;
@@ -151,6 +149,14 @@ void login3(char * input1, char * input2) {
 		}
 		ind += 1;
 	}
+
+	cout << "v goodcanary: " << v.goodcanary << endl;
+	cout << "v username: " << v.username << endl;
+	cout << "v passsword: " << v.password << endl;
+	cout << "v canary: " << v.canary << endl;
+	cout << "v good username: " << v.good_username << endl;
+	cout << "v good password: " << v.good_password << endl;
+
 	if (warn_user == 1) {
 		printf("Invalid characters found and skipped. Did you type your password correctly?\n");
 	}
@@ -161,8 +167,9 @@ void login3(char * input1, char * input2) {
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
+	pause();
 	//check canary and login success
-	if (v.canary != v.goodcanary) {
+	if (v.goodcanary !=  v.canary) {
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
