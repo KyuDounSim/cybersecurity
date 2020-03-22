@@ -167,7 +167,6 @@ void login3(char * input1, char * input2) {
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
-	pause();
 	//check canary and login success
 	if (v.goodcanary !=  v.canary) {
 		printf("Stack overflow detected, exiting.\n");

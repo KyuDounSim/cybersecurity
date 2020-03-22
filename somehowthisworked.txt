@@ -16,3 +16,6 @@ part c: part c don't overwrite the canary, but skip over it
  ./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXYabcdfghijklmnopqrstuvwxyzABCDE2ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::
 
 ./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXY:::::::::::::::::::::::::::::::ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::
+
+./a.out -k kdsimABCDEFGHIJKLMNOPQRSTUVWXYZ@@@@@@@@@@@@@@@@@@@@@@@@@kdsimABCDEFGHIJKLMNOPQRSTUVWXYZ@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
