@@ -162,6 +162,13 @@ void login3(char * input1, char * input2) {
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
+	cout << "v goodcanary: " << v.goodcanary << endl;
+	cout << "v username: " << v.username << endl;
+	cout << "v passsword: " << v.password << endl;
+	cout << "v canary: " << v.canary << endl;
+	cout << "v good username: " << v.good_username << endl;
+	cout << "v good password: " << v.good_password << endl;
+
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
 		printf("Stack overflow detected, exiting.\n");
