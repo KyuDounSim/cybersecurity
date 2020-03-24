@@ -70,7 +70,7 @@ void login2(char * input1, char * input2) {
 
 	//load username
 	strcpy(v.username, input1);
-
+	cout << v.canary << endl;
 	//set up "random" canary
 	//for real code, it is sometimes possible to read or predict the true value of canaries due to another leak
 	//this example demonstrates that
@@ -79,17 +79,17 @@ void login2(char * input1, char * input2) {
 	v.canary = v.goodcanary;
 	//load password
 	strcpy(v.password, input2);
-
+	cout << v.canary << endl;
 	//terminate strings properly for strcmp
 	v.username[24] = '\0';
 	v.password[24] = '\0';
 	v.good_username[24] = '\0';
 	v.good_password[24] = '\0';
 
-	//cout << "v.username is " << v.username << endl;
-	//cout << "v.password is " << v.password << endl;
-	//cout << "v.goodusername is " << v.good_username << endl;
-	//cout << "v.goodpassword is " << v.good_password << endl;
+	cout << "v.username is " << v.username << endl;
+	cout << "v.password is " << v.password << endl;
+	cout << "v.goodusername is " << v.good_username << endl;
+	cout << "v.goodpassword is " << v.good_password << endl;
 	//check canary and login success
 	if (v.canary != v.goodcanary) {
 		//cout << "v.canary is "  << v.canary << endl;
@@ -131,7 +131,7 @@ void login3(char * input1, char * input2) {
 
 	while (written_char < 25) { //don't write too much
 		int c = (int)input2[ind];
-		//cout << "c: " << c << endl;
+		cout << "c: " << c << endl;
 		if (c == 0 || (c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122) ) {
 			//this is an okay character. load it
 			v.password[ind] = (char)c;
@@ -172,7 +172,21 @@ void login3(char * input1, char * input2) {
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
-	if (strcmp(v.username, v.good_username) == 0 && strcmp(v.password, v.good_password) == 0) printf("Login successful!\n");
+	
+		cout << v.username << endl;
+		cout << v.good_username << endl;
+		cout << v.password << endl;
+		cout << v.good_password << endl;	
+		cout << strcmp(v.username, v.good_username) << endl;
+		cout << strcmp(v.password, v.good_password) << endl;
+		printf("v.password is %s\n", v.password);
+		printf("v.good_password is %s\n", v.good_password);
+		cout << strlen(v.password) << endl;
+		cout << strlen(v.good_password) << endl;
+	if (strcmp(v.username, v.good_username) == 0 && strcmp(v.password, v.good_password) == 0) {
+			printf("Login successful!\n");
+
+	}
 	else printf("Login denied.\n");
 }
 

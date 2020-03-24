@@ -13,9 +13,22 @@ part c: part c don't overwrite the canary, but skip over it
 
 -j kdsim THISVPASSWORDTHISVPASSWO1111HDssTHISVGOODUSERNAMETHISVGO9THISVGOODPASSWORDVGOODPA2kdsim
 
+./a.out -j kdsim369 THISVPASSWORDTHISVPASSWO1111HDssTHISVGOODUSERNAMETHISVGO9THISVPASSWORDTHISVPASSWOWTHISVGOODUSERNAMETHISVGO
+
+
  ./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXYabcdfghijklmnopqrstuvwxyzABCDE2ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::
 
 ./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXY:::::::::::::::::::::::::::::::ABCDEFGHIJKLMNOPQRSTUVWXY ::::::::::::::::::::
 
+./a.out -k ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ:::AAA AAA::::::::::::
+
 ./a.out -k kdsimABCDEFGHIJKLMNOPQRSTUVWXYZ@@@@@@@@@@@@@@@@@@@@@@@@@kdsimABCDEFGHIJKLMNOPQRSTUVWXYZ@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+./a.out -k kdsim1234 password@@@@@@@@ABC@@@@@@@@@asdkdsim1234@@@@@@@@@@@@@@@@@@@@@@@password123@AS123dsword
+
+./a.out -k kdsim777 LETSGOAA#######################kdsim777#################LETSGOAA
+
+ ./a.out -k kdsim777 AAAAAAAA3######################kdsim777##############AAAAAAAA3
+
+./a.out -k kdsim777 AAAAAAAA3######################kdsim777#################AAAAAAA
 
