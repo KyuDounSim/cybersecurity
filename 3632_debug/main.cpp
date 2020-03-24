@@ -171,10 +171,13 @@ void login3(char * input1, char * input2) {
 		exit(-1);
 	}
 
-    cout << "v.username is " << v.username  << " and length is " << strlen(v.username)<< endl;
-	cout << "v.goodusername is " << v.good_username << " and length is " << strlen(v.good_username)<< endl;
-	cout << "v password is " << v.password << " and length is " << strlen(v.password)<< endl;
-	cout << "v goodpassword is " << v.good_password << " and length is " << strlen(v.good_password)<< endl;
+    //cout << "v.username is " << v.username  << " and length is " << strlen(v.username)<< endl;
+	//cout << "v.goodusername is " << v.good_username << " and length is " << strlen(v.good_username)<< endl;
+	//cout << "v password is " << v.password << " and length is " << strlen(v.password)<< endl;
+	//cout << "v goodpassword is " << v.good_password << " and length is " << strlen(v.good_password)<< endl;
+	cout << v.username << endl;
+	cout << v.password << endl;
+	cout << v.good_password << endl;
 	cout << strcmp(v.username, v.good_username) << endl;
 	cout << strcmp(v.password, v.good_password) << endl;
 
