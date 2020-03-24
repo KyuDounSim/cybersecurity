@@ -32,3 +32,5 @@ part c: part c don't overwrite the canary, but skip over it
 
 ./a.out -k kdsim777 AAAAAAAA3######################kdsim777#################AAAAAAA
 
+-k kdsim777 LETSGOAAAAAA###################kdsim777:LETSGOAA:::
+
