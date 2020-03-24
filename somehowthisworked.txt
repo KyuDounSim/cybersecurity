@@ -34,3 +34,5 @@ part c: part c don't overwrite the canary, but skip over it
 
 -k kdsim777 LETSGOAAAAAA###################kdsim777:LETSGOAA:::
 
+./a.out -k kdsim777 LETSGO::@@@@@@@@@@@@@@@@@@@@@@@kdsim777@@@@@@@@@@@@@@@@@LETSGO
+correct 

@@ -131,7 +131,7 @@ void login3(char * input1, char * input2) {
 
 	while (written_char < 25) { //don't write too much
 		int c = (int)input2[ind];
-		cout << "c: " << c << endl;
+		//cout << "c: " << c << endl;
 		if (c == 0 || (c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122) ) {
 			//this is an okay character. load it
 			v.password[ind] = (char)c;
