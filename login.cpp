@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <time.h>
+#include <iostream>
 using namespace std;
 
 void login1(char * input1, char * input2) {
@@ -152,6 +153,10 @@ void login3(char * input1, char * input2) {
 		printf("Stack overflow detected, exiting.\n");
 		exit(-1);
 	}
+	//cout << v.username << endl;
+	//cout << v.good_username << endl;
+	//cout << v.password << endl;
+	//cout << v.good_password << endl;
 	if (strcmp(v.username, v.good_username) == 0 && strcmp(v.password, v.good_password) == 0) printf("Login successful!\n");
 	else printf("Login denied.\n");
 }
