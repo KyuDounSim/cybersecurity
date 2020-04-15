@@ -79,8 +79,8 @@ x = 30
 y = 30
 clock = pygame.time.Clock()
 
-p1s = "Seven for the Dwarf-lords in halls of stone."
-p2s = "In the land of Mordor where the shadows lie."
+#p1s = "Seven for the Dwarf-lords in halls of stone."
+#p2s = "In the land of Mordor where the shadows lie."
 
 #our byte arrays are just integer lists
 p1 = s_to_ints(p1s)
@@ -139,7 +139,7 @@ while not done:
         if event.type == pygame.KEYDOWN and inputting == 1:
             if event.key == pygame.K_ESCAPE or event.key == pygame.K_RETURN:
                 inputting = 0
-                print "we are no longer inputting"
+                print("we are no longer inputting")
                 continue
             elif event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
                 is_cap = 1
@@ -159,7 +159,7 @@ while not done:
         if event.type == pygame.KEYDOWN and inputting == 0:
             if (event.key == pygame.K_RETURN):
                 inputting = 1
-                print "we are now inputting"
+                print("we are now inputting")
         if event.type == pygame.KEYUP and inputting == 1:
             if event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
                 is_cap = 0
