@@ -83,16 +83,20 @@ clock = pygame.time.Clock()
 #p2s = "In the land of Mordor where the shadows lie."
 
 #our byte arrays are just integer lists
-p1 = s_to_ints(p1s)
-p2 = s_to_ints(p2s)
+#p1 = s_to_ints(p1s)
+#p2 = s_to_ints(p2s)
 #generate
-k = []
-for i in range(0, len(p1s)):
-    k.append(random.randint(0, 255))
+#k = []
+#for i in range(0, len(p1s)):
+#    k.append(random.randint(0, 255))
 
-c1 = xor(p1, k)
-c2 = xor(p2, k)
+#c1 = xor(p1, k)
+#c2 = xor(p2, k)
 
+c1 = open('ctext0', 'rb')
+c2 = open('ctext1', 'rb')
+c1 = c1.read()
+c2 = c2.read()
 x = xor(c1, c2)
 ##print showbytes(p1)
 ##print showbytes(p2)
@@ -102,7 +106,7 @@ x = xor(c1, c2)
 
 
 pygame.init()
-screen = pygame.display.set_mode((800, 700))
+screen = pygame.display.set_mode((1200, 1100))
 screen.fill((255, 255, 255))
 pygame.display.flip()
 
@@ -122,8 +126,8 @@ while not done:
             loc = (event.pos[0] - 100) / 15
             if (loc < 0):
                 loc = 0
-            if (loc > 43):
-                loc = 43
+            if (loc > 400):
+                loc = 400
         if event.type == pygame.MOUSEBUTTONUP:
             is_drag = 0
             if (event.pos[0] >= 100 and event.pos[1] >= 390 and event.pos[1] <= 435):
@@ -132,7 +136,7 @@ while not done:
             charnum = (event.pos[0] - 100)/15
             lineremain = event.pos[1] % 100
             linenum = (event.pos[1] - 90) / 100
-            if (charnum >= 0 and charnum <= 43 and (lineremain <= 35 or lineremain >= 90) and linenum >= 0 and linenum <= 4):
+            if (charnum >= 0 and charnum <= 400 and (lineremain <= 35 or lineremain >= 90) and linenum >= 0 and linenum <= 4):
                 towrite = 1
             else:
                 towrite = 0
@@ -217,7 +221,7 @@ while not done:
                          (100+(loc+len(r))*15, 400), (100+(loc+len(r))*15, 425)
                          )
     for j in range(0, 5):
-        for i in range(0, 44):
+        for i in range(0, 400):
             label = myfont.render(str(i), 1, (150, 150, 150))
             screen.blit(label, (100 + i * 15 + 4, 80 + j * 100))
     if (towrite == 1):
