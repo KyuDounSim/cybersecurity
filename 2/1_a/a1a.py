@@ -81,32 +81,34 @@ x = xor(c1, c2)
 # bytearray("text", 'utf-8'),  bytearray("ohre ", 'utf-8'), bytearray(" the e", 'utf-8'),
 # bytearray(" that ", 'utf-8'), bytearray(". Sony ", 'utf-8'), bytearray(" from ", 'utf-8'), bytearray(" be ", 'utf-8')]
 
-# for word in word_bag:
-#     for element in range(0, len(x)):
-#         if element + len(word) >= len(x):
-#             break
-#         print(element, end = '')
-#         print(bytearray(xor(x[element: element + len(word)], word)))
+ #for word in word_bag:
+ #    for element in range(0, len(x)):
+ #        if element + len(word) >= len(x):
+ #            break
+ #        print(element, end = '')
+ #        print(bytearray(xor(x[element: element + len(word)], word)))
 
 attempt = bytearray(input("Try some inputs!"), 'utf-8')
 
-for element in range(0, len(x)):
-    if element + len(attempt) >= len(x):
-        break
-    print(element, end=' ')
-    print(bytearray(xor(x[element: element + len(attempt)], attempt)))
+print(bytearray(xor(attempt, x)))
 
-attempe1 = "\
-    000000000000000Sony 00000000000000000000\
-    0000000000000000000000000000000000000000\
-    0000000000000000000000000000000000000000\
-    000000000000000000000000000 shar00000000\
-    0000000000000000000000000000000000000000\
-    00000000000000000000000 that000000000000\
-    0000000000000000000 text0000000000000000\
-    0000000000000000000000000000000000000000\
-    0000000000000000000000000000000000000000\
-    0000000000000000000000000000000000000000"
+#for element in range(0, len(x)):
+#    if element + len(attempt) >= len(x):
+#        break
+#    print(element, end=' ')
+#    print(bytearray(xor(x[element: element + len(attempt)], attempt)))
 
-attempe2 = bytearray(attempe1, 'utf-8')
-print(bytearray(xor(x, attempe2)))
+#attempe1 = "\
+#    000000000000000Sony 00000000000000000000\
+#    0000000000000000000000000000000000000000\
+#    0000000000000000000000000000000000000000\
+#    000000000000000000000000000 shar00000000\
+#    0000000000000000000000000000000000000000\
+#    00000000000000000000000 that000000000000\
+#    0000000000000000000 text0000000000000000\
+#    0000000000000000000000000000000000000000\
+#    0000000000000000000000000000000000000000\
+#    0000000000000000000000000000000000000000"
+
+#attempe2 = bytearray(attempe1, 'utf-8')
+#print(bytearray(xor(x, attempe2)))
