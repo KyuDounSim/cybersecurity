@@ -95,7 +95,7 @@ bool CheckDecryptedData(const std::string& data)
     //Decrypted text is considered correct if all of its characters are withinrange
     for(size_t i=0; i<data.size(); ++i)
     {
-        if(withinRange(static_cast<unsigned char>(data[i])))
+        if(!withinRange(static_cast<unsigned char>(data[i])))
         {
             return false;
         }
