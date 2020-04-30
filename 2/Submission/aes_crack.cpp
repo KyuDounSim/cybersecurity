@@ -84,13 +84,22 @@ bool CheckDecryptedData(const std::string& data)
     //Decrypted text is considered correct if all of its characters are printable
     for(size_t i=0; i<data.size(); ++i)
     {
-        if(::isprint(static_cast<unsigned char>(data[i])) == 0)
+        if(withinRange(static_cast<unsigned char>(data[i])))
         {
             return false;
         }
     }
 
     return true;    
+}
+
+bool withinRange(unsigned char a)
+{
+    if(32 <= a && a <= 34 || 39 <= a && a <= 41 || 44 <= a && a <= 59 || a == 63 || 65<= a && a <= 90 || 97 <= a && a <= 122) {
+        return true;
+    } else {
+	return false;
+    }
 }
 
 int main()
