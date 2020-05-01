@@ -79,27 +79,29 @@ std::string DecryptData(const std::vector<unsigned char>& key
     return decryptedText;
 }
 
+bool withinRange(unsigned char a)
+{
+    if( (32 <= a && a <= 34) || (39 <= a && a <= 41) || (44 <= a && a <= 59) || a == 63 || (65 <= a && a <= 90) || (97 <= a && a <= 122)) {
+
+        return true;
+
+    } else {
+    
+	return false;
+    }
+}
 bool CheckDecryptedData(const std::string& data)
 {
-    //Decrypted text is considered correct if all of its characters are printable
+    //Decrypted text is considered correct if all of its characters are withinrange
     for(size_t i=0; i<data.size(); ++i)
     {
-        if(withinRange(static_cast<unsigned char>(data[i])))
+        if(!withinRange(static_cast<unsigned char>(data[i])))
         {
             return false;
         }
     }
 
     return true;    
-}
-
-bool withinRange(unsigned char a)
-{
-    if(32 <= a && a <= 34 || 39 <= a && a <= 41 || 44 <= a && a <= 59 || a == 63 || 65<= a && a <= 90 || 97 <= a && a <= 122) {
-        return true;
-    } else {
-	return false;
-    }
 }
 
 int main()
